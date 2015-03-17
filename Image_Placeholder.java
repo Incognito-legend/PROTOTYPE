@@ -8,28 +8,40 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Image_Placeholder extends PLAYER
 {
-    /**
-     * Act - do whatever the Image_Placeholder wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public Image_Placeholder() 
+    public void Act() 
     {
+        WORLD level = (WORLD)this.getWorld();
+        if (Class_Selection){
+          System.out.println("Choose Your Class!");
+          System.out.println("Class_Paladin = Key 1");
+          System.out.println("Class_Lord    = Key 2");
+          System.out.println("Class_Warrior = Key 3");
+          Class_Selection = false;
+        }
         
-        left1 = baseString + "Prince left 1.png";
-        left2 = baseString + "Prince left 2.png";
-        left3 = baseString + "Prince left 3.png";
-        
-        right1 = baseString + "Prince right 1.png";
-        right2 = baseString + "Prince right 2.png";
-        right3 = baseString + "Prince right 3.png";
-        
-        down1 = baseString + "Prince down 1.png";
-        down2 = baseString + "Prince down 2.png";
-        down3 = baseString + "Prince down 3.png";
-        
-        up1 = baseString + "Prince up 1.png";
-        up2 = baseString + "Prince up 2.png";
-        up3 = baseString + "Prince up 3.png";
-      
-    }    
+        if (!(Class_Selection) && !(CS_Complete)){
+            
+          if (Greenfoot.isKeyDown("1")){
+              
+              System.out.println("You've Chosen the Paladin Class!");
+              
+              level.addObject(new Class_Paladin(), 512, 389);
+            
+          } else if (Greenfoot.isKeyDown("2")){
+              
+              System.out.println("You've Chosen the Lord Class!");
+              
+              level.addObject(new Class_Lord(), 512, 389);
+              
+          } else if (Greenfoot.isKeyDown("3")){
+              
+              System.out.println("You've Chosen the Warrior Class!");
+              
+              level.addObject(new Class_Warrior(), 512, 389);
+    
+          }
+    
+        }
 }
+}
+

@@ -24,7 +24,7 @@ public class WORLD extends World
         
         getBackground().drawImage(largeImage, -1358, -2045);
         
-        addObject(new Image_Placeholder(), 512, 389);
+        addObject(new Class_Lord(), 512, 389);
     }
     
     public void scroll(int dx, int dy)

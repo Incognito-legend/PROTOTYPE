@@ -28,8 +28,12 @@ public class PLAYER extends Actor
     int Lord = 1;
     int Paladin = 2;
     int Class;
+    boolean Class_Selection = true;
+    boolean CS_Complete = true;
+    
     public void act() 
     {
+        
         WORLD level = (WORLD)this.getWorld();
 
         int hero_x_px = -level.pos_x + getX();
@@ -46,45 +50,29 @@ public class PLAYER extends Actor
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
+       
       if (level.getTileAt (hero_x, hero_y) == 1001){
           level.scroll(-10, 0);
       }
       
         if (whichWalk == 0) {
           
-           
-                
             setImage(left1);
             
-            
-            
         } else if (whichWalk == 1) {
-              
-           
                 
             setImage(left2);
             
-           
-          
         } else if (whichWalk == 2) {
-            
-            
-            
+          
             setImage(left3);
-            
-            
-            
+        
         } else if (whichWalk == 3) {
-            
-            
-                
+           
             setImage(left2);
-            
-            
-            
+          
           }
           
-     
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "left";
         System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
@@ -92,49 +80,35 @@ public class PLAYER extends Actor
     
 }else if (Greenfoot.isKeyDown ("right")){
 
-       
        WORLD x = (WORLD)this.getWorld();
        x.scroll(-10, 0);
        hero_x_px = -level.pos_x + getX()+50;
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
+       
       if (level.getTileAt (hero_x, hero_y) == 1001){
           level.scroll(10, 0);
         }
         
         if (whichWalk == 0) {
-          
-
-                
+            
             setImage(right1);
-            
-           
-          
+       
         } else if (whichWalk == 1) {
-              
-
-                
+     
             setImage(right2);
-            
-           
           
         } else if (whichWalk == 2) {
-            
-
-                
+     
             setImage(right3);
             
-          
-            
         } else if (whichWalk == 3) {
-            
-                
+          
             setImage(right2);
-            
-          
-          
+       
         }
+        
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "right";
         System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
@@ -148,46 +122,34 @@ public class PLAYER extends Actor
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
+       
       if (level.getTileAt (hero_x, hero_y) == 1001){
           level.scroll(0, -10);
         }
         
       if (whichWalk == 0) {
-                
-            
+         
           setImage(up1);
-            
-           
-          
+    
         } else if (whichWalk == 1) {
-              
-        
-                
+      
           setImage(up2);
-            
-           
           
         } else if (whichWalk == 2) {
-            
-            
-                
+       
           setImage(up3);
-            
-          
-            
+     
         } else if (whichWalk == 3) {
-            
-
-                
+    
           setImage(up2);
-            
-          
-          
+    
         }
+        
         whichWalk = (whichWalk + 1) % 4;  
         lastWayFacing = "up";
         System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
         System.out.println(level.pos_x + ", " + level.pos_y);
+        
     } else if (Greenfoot.isKeyDown("down")){
        
        WORLD x = (WORLD)this.getWorld();
@@ -196,6 +158,7 @@ public class PLAYER extends Actor
        hero_y_px = -level.pos_y + getY()+40;
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
+       
       if (level.getTileAt (hero_x, hero_y) == 1001){
           level.scroll(0, 10);
         }
@@ -217,10 +180,12 @@ public class PLAYER extends Actor
             setImage(down2);
           
         }
+        
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "down";
         System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
         System.out.println(level.pos_x + ", " + level.pos_y);
+        
 }else if (lastWayFacing.equals("up")){
                     
             setImage(up2);
