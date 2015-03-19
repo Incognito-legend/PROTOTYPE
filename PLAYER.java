@@ -28,10 +28,11 @@ public class PLAYER extends Actor
     int Lord = 1;
     int Paladin = 2;
     int Class;
+    int Character = 1;
     boolean Class_Selection = true;
-    boolean CS_Complete = true;
+    boolean CS_Complete = false;
     
-    public void act() 
+    public void act_PLAYER() 
     {
         
         WORLD level = (WORLD)this.getWorld();
@@ -203,7 +204,26 @@ public class PLAYER extends Actor
             setImage(right2);
            
     }
+
+      if (Greenfoot.isKeyDown("1")){
+        
+       Character = 1;
+    
+     }
+     
+     if (Greenfoot.isKeyDown("2")){
+        
+      Character = 2;
+    
+     }
+     
+     if (Greenfoot.isKeyDown("3")){
+        
+      Character = 3;
+    
+     }
+ }
 }
-}
+
 
  

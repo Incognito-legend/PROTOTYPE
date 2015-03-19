@@ -8,9 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Image_Placeholder extends PLAYER
 {
-    public void Act() 
+    public Image_Placeholder() 
     {
         WORLD level = (WORLD)this.getWorld();
+        
         if (Class_Selection){
           System.out.println("Choose Your Class!");
           System.out.println("Class_Paladin = Key 1");
@@ -18,28 +19,40 @@ public class Image_Placeholder extends PLAYER
           System.out.println("Class_Warrior = Key 3");
           Class_Selection = false;
         }
-        
-        if (!(Class_Selection) && !(CS_Complete)){
+
+        if ((!(Class_Selection)) && (!(CS_Complete))){
             
-          if (Greenfoot.isKeyDown("1")){
+           if (Character == 1){
               
               System.out.println("You've Chosen the Paladin Class!");
               
               level.addObject(new Class_Paladin(), 512, 389);
-            
-          } else if (Greenfoot.isKeyDown("2")){
+              
+              Class_Selection = true;
+              
+              CS_Complete = true;
+              
+           } else if (Character == 2){
               
               System.out.println("You've Chosen the Lord Class!");
               
               level.addObject(new Class_Lord(), 512, 389);
               
-          } else if (Greenfoot.isKeyDown("3")){
+              Class_Selection = true;
+              
+              CS_Complete = true;
+              
+          } else if (Character == 3){
               
               System.out.println("You've Chosen the Warrior Class!");
               
               level.addObject(new Class_Warrior(), 512, 389);
+              
+              Class_Selection = true;
+              
+              CS_Complete = true;
     
-          }
+         }
     
         }
 }
