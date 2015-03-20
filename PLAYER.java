@@ -25,12 +25,12 @@ public class PLAYER extends Actor
     String lastWayFacing = "down";
     
     int whichWalk = 0;
-    int Lord = 1;
-    int Paladin = 2;
-    int Class;
-    int Character = 1;
-    boolean Class_Selection = true;
-    boolean CS_Complete = false;
+    public int Lord = 1;
+    public int Paladin = 2;
+    public int Warrior = 3;
+    public int Character = 1;
+    public boolean Class_Selection = true;
+    public boolean CS_Complete = false;
     
     public void act_PLAYER() 
     {
@@ -41,9 +41,20 @@ public class PLAYER extends Actor
         int hero_y_px = -level.pos_y + getY();
         int hero_x = hero_x_px/96;
         int hero_y = hero_y_px/96;
-
         
-        if (Greenfoot.isKeyDown ("left")){
+if (Greenfoot.isKeyDown("1") && !(CS_Complete)){
+        
+      Character = Lord;
+    
+}else if (Greenfoot.isKeyDown("2") && !(CS_Complete)){
+        
+      Character = Paladin;
+    
+}else if (Greenfoot.isKeyDown("3") && !(CS_Complete)){
+        
+      Character = Warrior;
+    
+}else if (Greenfoot.isKeyDown ("left")){
        
        level.scroll(10, 0);
        
@@ -203,27 +214,11 @@ public class PLAYER extends Actor
           
             setImage(right2);
            
-    }
 
-      if (Greenfoot.isKeyDown("1")){
-        
-       Character = 1;
-    
-     }
-     
-     if (Greenfoot.isKeyDown("2")){
-        
-      Character = 2;
-    
-     }
-     
-     if (Greenfoot.isKeyDown("3")){
-        
-      Character = 3;
-    
-     }
+  
+ 
  }
 }
-
+}
 
  

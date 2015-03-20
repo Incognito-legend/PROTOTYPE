@@ -10,7 +10,7 @@ public class Image_Placeholder extends PLAYER
 {
     public Image_Placeholder() 
     {
-        WORLD level = (WORLD)this.getWorld();
+        WORLD level_2 = (WORLD)this.getWorld();
         
         if (Class_Selection){
           System.out.println("Choose Your Class!");
@@ -20,33 +20,35 @@ public class Image_Placeholder extends PLAYER
           Class_Selection = false;
         }
 
-        if ((!(Class_Selection)) && (!(CS_Complete))){
-            
-           if (Character == 1){
+        if (!(Class_Selection) && !(CS_Complete)){
+     
+           if (Character == Lord){
               
               System.out.println("You've Chosen the Paladin Class!");
               
-              level.addObject(new Class_Paladin(), 512, 389);
+              level_2.removeObject(this);
+              
+              level_2.addObject(new Class_Paladin(), 512, 389);
               
               Class_Selection = true;
               
               CS_Complete = true;
               
-           } else if (Character == 2){
+           } else if (Character == Paladin){
               
               System.out.println("You've Chosen the Lord Class!");
               
-              level.addObject(new Class_Lord(), 512, 389);
+              level_2.addObject(new Class_Lord(), 512, 389);
               
               Class_Selection = true;
               
               CS_Complete = true;
               
-          } else if (Character == 3){
+          } else if (Character == Warrior){
               
               System.out.println("You've Chosen the Warrior Class!");
               
-              level.addObject(new Class_Warrior(), 512, 389);
+              level_2.addObject(new Class_Warrior(), 512, 389);
               
               Class_Selection = true;
               
