@@ -10,53 +10,79 @@ public class Image_Placeholder extends PLAYER
 {
     public Image_Placeholder() 
     {
-        WORLD level_2 = (WORLD)this.getWorld();
-        
-        if (Class_Selection){
-          System.out.println("Choose Your Class!");
-          System.out.println("Class_Paladin = Key 1");
-          System.out.println("Class_Lord    = Key 2");
-          System.out.println("Class_Warrior = Key 3");
-          Class_Selection = false;
-        }
+        World level = (World)this.getWorld();
 
+//         if (!(Class_Selection) && !(CS_Complete)){
+//      
+//            if (Character == 1){
+//               
+//               System.out.println("You've Chosen the Paladin Class!");
+//               
+//               level.addObject(new Class_Paladin(), 512, 389);
+//               
+//               Class_Selection = true;
+//               
+//               CS_Complete = true;
+//               
+//           } else if (Character == 2){
+//               
+//               System.out.println("You've Chosen the Lord Class!");
+//               
+//               level.addObject(new Class_Lord(), 512, 389);
+//               
+//               Class_Selection = true;
+//               
+//               CS_Complete = true;
+//               
+//          } else if (Character == 3){
+//               
+//               System.out.println("You've Chosen the Warrior Class!");
+//               
+//               level.addObject(new Class_Warrior(), 512, 389);
+//               
+//               Class_Selection = true;
+//               
+//               CS_Complete = true;
+//     
+//          }
+//     
+//         }
         if (!(Class_Selection) && !(CS_Complete)){
-     
-           if (Character == Lord){
-              
-              System.out.println("You've Chosen the Paladin Class!");
-              
-              level_2.removeObject(this);
-              
-              level_2.addObject(new Class_Paladin(), 512, 389);
-              
-              Class_Selection = true;
-              
-              CS_Complete = true;
-              
-           } else if (Character == Paladin){
-              
-              System.out.println("You've Chosen the Lord Class!");
-              
-              level_2.addObject(new Class_Lord(), 512, 389);
-              
-              Class_Selection = true;
-              
-              CS_Complete = true;
-              
-          } else if (Character == Warrior){
-              
-              System.out.println("You've Chosen the Warrior Class!");
-              
-              level_2.addObject(new Class_Warrior(), 512, 389);
-              
-              Class_Selection = true;
-              
-              CS_Complete = true;
-    
-         }
-    
+        
+        switch (Character) {
+
+          case 1:
+             if (!(this instanceof Class_Paladin)){
+               level.removeObject(this);
+               level.addObject(new Class_Paladin(), 512, 389);
+               level.addObject(new Smoke_Effect(), 512, 389);
+               System.out.println("You have chosen the [ Paladin ] !");
+               Character = 1;
+             }
+          break;
+          case 2:
+             if (!(this instanceof Class_Lord)){
+               level.removeObject(this);
+               level.addObject(new Class_Lord(), 512, 389);
+               level.addObject(new Smoke_Effect(), 512, 389);
+               System.out.println("You have chosen the [ Lord ] !");
+               Character = 2;
+             }
+            
+          break;
+          case 3:
+             if (!(this instanceof Class_Warrior)){
+               level.removeObject(this);
+               level.addObject(new Class_Warrior(), 512, 389);
+               level.addObject(new Smoke_Effect(), 512, 389);
+               System.out.println("You have chosen the [ Warrior ] !");
+               Character = 3;
+             }
+          break;
+          
         }
+        
+    }
 }
 }
 

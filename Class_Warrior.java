@@ -14,7 +14,7 @@ public class Class_Warrior extends Image_Placeholder
      */
     public Class_Warrior() 
     {
-        
+
         left1 = baseString + "Female Warrior left1.png";
         left2 = baseString + "Female Warrior left2.png";
         left3 = baseString + "Female Warrior left3.png";

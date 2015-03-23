@@ -28,13 +28,12 @@ public class PLAYER extends Actor
     public int Lord = 1;
     public int Paladin = 2;
     public int Warrior = 3;
-    public int Character = 1;
+    public int Character = 2;
     public boolean Class_Selection = true;
     public boolean CS_Complete = false;
     
     public void act_PLAYER() 
     {
-        
         WORLD level = (WORLD)this.getWorld();
 
         int hero_x_px = -level.pos_x + getX();
@@ -44,17 +43,19 @@ public class PLAYER extends Actor
         
 if (Greenfoot.isKeyDown("1") && !(CS_Complete)){
         
-      Character = Lord;
+      Character = 1;
     
 }else if (Greenfoot.isKeyDown("2") && !(CS_Complete)){
         
-      Character = Paladin;
+      Character = 2;
     
 }else if (Greenfoot.isKeyDown("3") && !(CS_Complete)){
         
-      Character = Warrior;
-    
-}else if (Greenfoot.isKeyDown ("left")){
+      Character = 3;
+
+}   
+ 
+if (Greenfoot.isKeyDown ("left")){
        
        level.scroll(10, 0);
        
