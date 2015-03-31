@@ -10,7 +10,6 @@ public class Image_Placeholder extends PLAYER
 {
     public Image_Placeholder() 
     {
-        World level = (World)this.getWorld();
 
 //         if (!(Class_Selection) && !(CS_Complete)){
 //      
@@ -47,42 +46,6 @@ public class Image_Placeholder extends PLAYER
 //          }
 //     
 //         }
-        if (!(Class_Selection) && !(CS_Complete)){
-        
-        switch (Character) {
-
-          case 1:
-             if (!(this instanceof Class_Paladin)){
-               level.removeObject(this);
-               level.addObject(new Class_Paladin(), 512, 389);
-               level.addObject(new Smoke_Effect(), 512, 389);
-               System.out.println("You have chosen the [ Paladin ] !");
-               Character = 1;
-             }
-          break;
-          case 2:
-             if (!(this instanceof Class_Lord)){
-               level.removeObject(this);
-               level.addObject(new Class_Lord(), 512, 389);
-               level.addObject(new Smoke_Effect(), 512, 389);
-               System.out.println("You have chosen the [ Lord ] !");
-               Character = 2;
-             }
-            
-          break;
-          case 3:
-             if (!(this instanceof Class_Warrior)){
-               level.removeObject(this);
-               level.addObject(new Class_Warrior(), 512, 389);
-               level.addObject(new Smoke_Effect(), 512, 389);
-               System.out.println("You have chosen the [ Warrior ] !");
-               Character = 3;
-             }
-          break;
-          
-        }
-        
-    }
 }
 }
 

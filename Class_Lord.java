@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Class_Lord extends Image_Placeholder
+public class Class_Lord extends PLAYER
 {
     /**
      * Act - do whatever the Class_Lord wants to do. This method is called whenever

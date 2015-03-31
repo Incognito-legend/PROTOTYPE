@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
-public class Smoke_Effect extends Image_Placeholder
+public class Smoke_Effect extends PLAYER
 {
     int counter = 1;
     public void act() 
